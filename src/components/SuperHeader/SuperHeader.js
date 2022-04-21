@@ -1,21 +1,23 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
-import { COLORS } from '../../constants';
+import { COLORS, QUERIES } from "../../constants";
 
-import SearchInput from '../SearchInput';
-import UnstyledButton from '../UnstyledButton';
-import Icon from '../Icon';
+import SearchInput from "../SearchInput";
+import UnstyledButton from "../UnstyledButton";
+import Icon from "../Icon";
 
 const SuperHeader = () => {
   return (
     <Wrapper>
-      <MarketingMessage>
+      <MarketingMessage className="hide">
         Free shipping on domestic orders over $75!
       </MarketingMessage>
-      <SearchInput />
-      <HelpLink href="/help">Help</HelpLink>
-      <UnstyledButton>
+      <SearchInput className="hide" />
+      <HelpLink href="/help" className="hide">
+        Help
+      </HelpLink>
+      <UnstyledButton className="hide">
         <Icon id="shopping-bag" strokeWidth={1} />
       </UnstyledButton>
     </Wrapper>
@@ -29,9 +31,20 @@ const Wrapper = styled.div`
   font-size: 0.875rem;
   color: ${COLORS.gray[300]};
   background-color: ${COLORS.gray[900]};
-  height: 40px;
+  height: 5px;
   padding-left: 32px;
   padding-right: 32px;
+
+  .hide {
+    display: none;
+  }
+
+  @media ${QUERIES.desktopAndUp} {
+    height: 40px;
+    .hide {
+      display: initial;
+    }
+  }
 `;
 
 const MarketingMessage = styled.span`
