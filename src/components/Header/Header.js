@@ -39,12 +39,15 @@ const Header = () => {
           <UnstyledButton className="hide">
             <Icon id="search" strokeWidth={2} />
           </UnstyledButton>
-          <UnstyledButton className="hide">
+
+          <UnstyledButton
+            className="hide"
+            onClick={() => setShowMobileMenu(!showMobileMenu)}
+          >
             <Icon id="menu" strokeWidth={2} />
           </UnstyledButton>
         </WrapIcons>
       </MainHeader>
-
       <MobileMenu
         isOpen={showMobileMenu}
         onDismiss={() => setShowMobileMenu(false)}
