@@ -68,6 +68,7 @@ const Nav = styled.nav`
   display: none;
   gap: 48px;
   margin: 0px 48px;
+  overflow: auto;
 
   @media ${QUERIES.desktopAndUp} {
     display: flex;
